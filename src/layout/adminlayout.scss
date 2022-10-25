@@ -1,0 +1,99 @@
+@import "../sass/variables";
+
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 100%;
+    background-color: $col_navbar;
+
+    .logo{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        padding: 0 20px;
+        object-fit: cover;
+        width: 20%;
+        background-color: $col_navbar;
+    }
+    ul {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        justify-content: space-between;
+        display: flex;
+        border-style: none;
+        text-decoration: none;
+        background-color: $col_navbar;
+        list-style-type: none;
+
+        li {
+            text-decoration: none;
+            background-color: $col_navbar;
+        }
+
+        a {
+            color: $col_white;
+            border-style: none;
+            text-decoration: none;
+            background-color: $col_navbar;
+
+            
+
+            &:hover {
+                color: $col_cardbutton;
+            }
+        }
+    }
+}
+
+// MOBIL
+
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        .logo{
+            object-fit: cover;
+            width: 10%;
+            height: 100%;
+            margin-top: 20px;
+            padding: 0px;
+        }
+
+        li{
+            margin: 20px;
+        }
+       
+        
+    }
+
+    .toggle-buttonAdmin{
+       display: none;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 400px) {
+    nav {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        .logo{
+            object-fit: cover;
+            width: 20%;
+            height: 100%;
+            margin-top: 40px;
+            padding: 0 10px;
+        }
+
+        ul{
+            li{
+                a{
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,42 @@
+@import "../../sass//variables";
+
+#modal{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    &.active{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .togglemodal{
+        
+        padding: 15px;
+        background-color: $col_white;
+        width: 30%;
+        min-height: 500px;
+        position: relative;
+        
+
+        .modalClose{
+            position: absolute;
+            background-color: $col_modalCloseBtn;
+            color: $col_white;
+            border-radius: 5px;
+            width: 60px;
+            right: 40px;
+            top: 92%;
+            padding: 5px;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}

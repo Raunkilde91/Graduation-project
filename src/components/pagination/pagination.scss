@@ -1,0 +1,26 @@
+@import "../../sass/variables";
+
+.pagination {
+    display: flex !important;
+    justify-content: flex-start;
+    
+
+    li {
+        padding: 8px 10px;
+        list-style-type: none;
+        border: 1px solid silver;
+        margin: 2px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+        background-color: $col_white;
+        text-transform: uppercase;
+
+        &.pageactive {
+            background-color: $col_cardbutton;
+            color: white;
+        }
+        &:hover:not(.pageactive) {
+            background-color: silver;
+        }
+    }
+}

@@ -1,0 +1,196 @@
+@import "../../sass/variables";
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+// NAV - overordnet
+
+
+// INFO TIL EKSAMEN
+
+// nav{
+// 	display: block;
+// 	position: sticky;
+// 	top:0;
+// 	z-index: 50;
+// }
+
+
+.navbar {
+	display: grid !important;
+	
+	grid-template-columns: 0.5fr 0.7fr 1fr;
+	grid-template-rows: 1fr;
+	background-color: $col_navbar !important;
+	color: white;
+	padding: 0 70px;
+	font-family: "Eurostilebold";
+	
+
+	
+	.logoFrontpage {
+		grid-column: 1/2;
+		width: 80%;
+		background-color: $col_navbar !important;
+	}
+
+	.navbar-links {
+		grid-column: 2/3;
+		margin-left: 50px;
+		font-family: "Eurostilebold";
+		background-color: $col_navbar !important;
+
+		ul {
+			background-color: $col_navbar !important;
+
+			li {
+				background-color: $col_navbar !important;
+
+				a {
+					color: $col_navbarFontColor;
+
+					&:hover {
+						color: $col_white;
+					}
+				}
+			}
+		}
+	}
+}
+
+// BURGER-knap - skjul på stor skærm
+.toggle-button {
+	display: none;
+	position: absolute;
+	top: 0.75rem;
+	right: 1rem;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 30px;
+	height: 21px;
+
+	.bar {
+		height: 3px;
+		width: 100%;
+		background-color: lightgray;
+		border-radius: 10px;
+
+		/* Extra - bar1 bar2 og bar3 */
+		transition: all 0.2s ease;
+	}
+
+	// De 3 streger i burger-ikonet - transition til det her ved "change" på .bar
+	&.change .bar1 {
+		transform: rotate(-45deg) translate(-5px, 5px);
+	}
+	&.change .bar2 {
+		opacity: 0;
+	}
+	&.change .bar3 {
+		transform: rotate(45deg) translate(-8px, -8px);
+	}
+}
+
+// LINK-CONTAINER (indeholder ul/li/a)
+.navbar-links {
+	height: 100%;
+
+	ul {
+		display: flex;
+		margin: 0;
+		padding: 0;
+		background-color: black;
+	}
+
+	li {
+		list-style: none;
+
+		/* ekstra */
+		transition: padding 1s ease; /* ændres i mq */
+		border-radius: 3px;
+		background-color: $col_navbar !important;
+
+		&:hover {
+			a {
+				color: $col_devider;
+			}
+		}
+
+		a {
+			display: block;
+			text-decoration: none;
+			padding: 1rem;
+			color: white;
+			background-color: $col_navbar !important;
+		}
+	}
+}
+
+// BREAKPOINT: Skift til burgermenu - alt fra 768 px og ned
+@media (max-width: 768px) {
+	.navbar {
+		flex-direction: column;
+		align-items: flex-start !important;
+	}
+
+	// BURGER-knap - vis på lille skærm
+	.toggle-button {
+		display: flex;
+		background-color: $col_black;
+	}
+
+	.navbar-links {
+		// Skjul menu (medmindre class active - se herunder)
+		display: none; // Skjul
+		width: 100%;
+		margin-left: 50px;
+
+		// Hvis class active = vis menu
+		&.active {
+			display: flex; // Vis
+		}
+
+		ul {
+			width: 100%;
+			flex-direction: column;
+
+			li {
+				text-align: center;
+				transition: padding 0.5s ease;
+			}
+
+			li:hover {
+				padding-left: 1rem;
+			}
+
+			li a {
+				padding: 0.5rem 1rem;
+			}
+		}
+	}
+}
+
+// FRA 375px OG OPEFTER
+@media (min-width: 375px) and (max-width: 400px) {
+	.navbar {
+		padding-top: 1.5rem;
+
+
+		.logoFrontpage {
+			grid-column: 1/2;
+			width: 100%;
+			background-color: $col_navbar !important;
+		}
+
+		.navbar-links {
+			margin-left: 30px;
+		}
+
+		.toggle-button {
+			top:0.25rem;
+		}
+	}
+}

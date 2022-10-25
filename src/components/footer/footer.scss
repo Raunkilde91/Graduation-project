@@ -1,0 +1,29 @@
+@import "../../sass/variables";
+
+#footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 100%;
+    background-color: $col_black;
+    color: $col_white;
+    height: 80px;
+    
+
+    .footerText {
+       grid-column: 2/3;
+       grid-row: 2/3;
+       margin: 0 auto;
+       text-align: center;
+       background-color: $col_black;
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .footerText{
+
+        grid-column: 1/-1 !important;
+    }
+}

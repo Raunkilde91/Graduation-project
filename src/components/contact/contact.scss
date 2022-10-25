@@ -1,0 +1,101 @@
+@import "../../sass/variables";
+
+#contact {
+    padding: 0 70px;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 100%;
+    width: 100%;
+    
+    h2{
+        grid-column: 1/-1;
+        text-align: center;
+        margin-top: 50px;
+        font-family: "Eurostilebold";
+        width: 100%;
+        padding: 1%;
+        background-color: #595959;
+        color: white;
+    }
+
+    .companyName{
+        font-weight: 700;
+        font-family: "Eurostilebold";
+    }
+    
+    .contact{
+        margin-top: 60px;
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    form {
+        display: grid;
+        grid-column: 3/4;
+        grid-row: 2/3;
+        margin-top: 60px;
+        width: 100%;
+        justify-self: flex-end;
+        margin-bottom: 100px;
+        
+        input{
+            width:100%;
+            background-color: $col_white;
+            border: 1px solid $col_border;
+            border-radius: 5px;
+            padding: 1%;
+        }
+
+        textarea{
+            width: 100%;
+            background-color: $col_white;
+            border: 1px solid $col_border;
+            border-radius: 5px;
+        }
+
+        button{
+            width: 80px;
+            background-color: $col_cardbutton;
+            color: $col_white;
+            border-style: none;
+            border-radius: 5px;
+            padding: 1%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+
+    
+}
+
+
+@media (max-width: 768px) {
+
+    #contact {
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 0.7fr 1fr;
+
+        h2{
+            grid-column: 1/-1;
+        }
+        
+          
+    .contact{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        height: auto;
+    }
+
+    form{
+        grid-column: 1/2;
+        grid-row: 3/4;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        
+    }
+}
+
+}

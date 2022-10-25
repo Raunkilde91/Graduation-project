@@ -1,0 +1,65 @@
+@import "../../sass/variables";
+
+#about{
+    padding: 0 70px;
+    
+    
+    h2{
+        grid-column: 1/-1;
+        text-align: center;
+        margin-top: 100px;
+        width: 100%;
+        padding: 1%;
+        background-color: #595959;
+        color: white;
+        font-weight: 500;
+        font-family: "Eurostilebold";
+    }
+    
+    .aboutGrid{
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr;
+        width: 100%;
+        margin-top: 50px;
+
+        .aboutContent{
+            width: 100%;
+            grid-column: 1/2;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .aboutImg{
+            grid-column: 3/4;
+        }
+    }
+
+}
+
+// BREAKPOINT: Skift til burgermenu - alt fra 800 px og ned
+@media (max-width: 768px) {
+
+    #about {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin-top: 50px;
+        padding: 0 20px;
+
+        .aboutContent{
+            grid-column: 1/-1!important;
+            font-size: 20px;
+            
+        }
+    }
+    .aboutImg{
+        display: none;
+    }
+
+	}
+
+    @media (max-width: 768px) {
+        
+        #about{
+            padding: 0 20px;
+        }
+    }
